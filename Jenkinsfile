@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                bat 'pytest app/test_app.py'
+                bat '"C:\\Users\\prafu\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest app/test_app.py'
             }
         }
         stage('Build Docker Image') {
