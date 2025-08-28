@@ -2,8 +2,12 @@
 FROM python:3.9-slim
 
 WORKDIR /app
+
+# Upgrade pip first
+RUN pip install --no-cache-dir --upgrade pip
+
 COPY app/requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ /app/
 EXPOSE 5010
