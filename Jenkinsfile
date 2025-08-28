@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Run Container') {
             steps {
-                bat 'docker run -d --name mini-devops-container -p 5010:5000 mini-devops-app'
+                bat 'docker run -d --name mini-devops-container -p 5030:5000 mini-devops-app'
             }
         }
     }
