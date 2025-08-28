@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                bat '"C:\\Users\\prafu\\AppData\\Local\\Programs\\Python\\Python313"\\Scripts\\pip.exe install -r app\\requirements.txt'
+                bat 'C:\\Users\\prafu\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\pip.exe install -r app\\requirements.txt'
             }
         }
         stage('Run Tests') {
