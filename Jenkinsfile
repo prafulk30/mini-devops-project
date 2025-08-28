@@ -23,8 +23,13 @@ pipeline {
         }
         stage('Run Container') {
             steps {
-                bat 'docker run -d --name mini-devops-container-v3 -p 5030:5000 mini-devops-app'
-            }
-        }
+                // Stop and remove old container if it exists
+                bat '''
+                docker ps -a -q --filter "name=mini-devops-container-v3" | findstr . && docker rm -f mini-devops-container-v3 || echo "No old container to remove"
+                docker run -d --name mini-devops-container-v3 -p 5030:5000 mini-devops-app
+        '''
+    }
+}
+
     }
 }
